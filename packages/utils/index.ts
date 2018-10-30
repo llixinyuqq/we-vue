@@ -3,11 +3,19 @@ import { getTouch } from './touches'
 
 const isServer = Vue.prototype.$isServer
 
-function isDef (value) {
+/**
+ * whether the value is defined
+ * @param value
+ */
+function isDef (value: any): boolean {
   return value !== undefined && value !== null
 }
 
-function isObj (x) {
+/**
+ * whether the value is a type of object
+ * @param x
+ */
+function isObj (x: any): boolean {
   const type = typeof x
   return x !== null && (type === 'object' || type === 'function')
 }

@@ -3,10 +3,10 @@
     "baseUrl": ".",
     "module": "esnext",
     "target": "es5",
-    "sourceMap": true,
+    "sourceMap": false,
     "moduleResolution": "node",
-    "outDir": "fuck",
-    "declaration": true
+    "outDir": "tsc-compiled",
+    "declaration": false
   },
   "include": [
     "packages/**/*.ts"

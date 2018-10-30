@@ -2,7 +2,7 @@ import { isDef, isObj } from './'
 
 const { hasOwnProperty } = Object.prototype
 
-function assignKey (to, from, key) {
+function assignKey (to, from, key): void {
   const val = from[key]
 
   if (!isDef(val) || (hasOwnProperty.call(to, key) && !isDef(to[key]))) {

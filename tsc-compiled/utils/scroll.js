@@ -1,14 +1,13 @@
 import { isServer } from './index'
-
 export default {
-  debounce (func, wait, immediate) {
-    let timeout, args, context, timestamp, result
+  debounce: function (func, wait, immediate) {
+    var timeout, args, context, timestamp, result
     return function () {
       context = this
       args = arguments
       timestamp = new Date()
-      const later = () => {
-        const last = new Date() - timestamp
+      var later = function () {
+        var last = Date.now() - timestamp
         if (last < wait) {
           timeout = setTimeout(later, wait - last)
         } else {
@@ -22,15 +21,17 @@ export default {
       return result
     }
   },
-
   /**
    * 找到最近的触发滚动事件的元素
    * @param {Element} element
    * @param {Element} rootParent
    * @returns {Element | window}
    */
-  getScrollEventTarget (element, rootParent = window) {
-    let currentNode = element
+  getScrollEventTarget: function (element, rootParent) {
+    if (rootParent === void 0) {
+      rootParent = window
+    }
+    var currentNode = element
     // bugfix, see http://w3help.org/zh-cn/causes/SD9013 and http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
     while (
       currentNode &&
@@ -39,7 +40,7 @@ export default {
       currentNode.nodeType === 1 &&
       currentNode !== rootParent
     ) {
-      const overflowY = this.getComputedStyle(currentNode).overflowY
+      var overflowY = this.getComputedStyle(currentNode).overflowY
       if (overflowY === 'scroll' || overflowY === 'auto') {
         return currentNode
       }
@@ -47,10 +48,9 @@ export default {
     }
     return rootParent
   },
-
   // 判断元素是否被加入到页面节点内
-  isAttached (element) {
-    let currentNode = element.parentNode
+  isAttached: function (element) {
+    var currentNode = element.parentNode
     while (currentNode) {
       if (currentNode.tagName === 'HTML') {
         return true
@@ -62,33 +62,28 @@ export default {
     }
     return false
   },
-
   // 获取滚动高度
-  getScrollTop (element) {
+  getScrollTop: function (element) {
     return 'scrollTop' in element ? element.scrollTop : element.pageYOffset
   },
-
   // 设置滚动高度
-  setScrollTop (element, value) {
+  setScrollTop: function (element, value) {
     'scrollTop' in element
       ? (element.scrollTop = value)
       : element.scrollTo(element.scrollX, value)
   },
-
   // 获取元素距离顶部高度
-  getElementTop (element) {
+  getElementTop: function (element) {
     return (
       (element === window ? 0 : element.getBoundingClientRect().top) +
       this.getScrollTop(window)
     )
   },
-
-  getVisibleHeight (element) {
+  getVisibleHeight: function (element) {
     return element === window
       ? element.innerHeight
       : element.getBoundingClientRect().height
   },
-
   getComputedStyle:
     !isServer &&
     document.defaultView.getComputedStyle.bind(document.defaultView)

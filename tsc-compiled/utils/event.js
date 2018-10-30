@@ -1,11 +1,10 @@
 import { isServer } from './'
-
-export let supportsPassive = false
+export var supportsPassive = false
 if (!isServer) {
   try {
-    const opts = {}
+    var opts = {}
     Object.defineProperty(opts, 'passive', {
-      get () {
+      get: function () {
         /* istanbul ignore next */
         supportsPassive = true
       }
@@ -13,16 +12,17 @@ if (!isServer) {
     window.addEventListener('test-passive', null, opts)
   } catch (e) {}
 }
-
-export function on (target, event, handler, passive = false) {
+export function on (target, event, handler, passive) {
+  if (passive === void 0) {
+    passive = false
+  }
   !isServer &&
     target.addEventListener(
       event,
       handler,
-      supportsPassive ? { capture: false, passive } : false
+      supportsPassive ? { capture: false, passive: passive } : false
     )
 }
-
 export function off (target, event, handler) {
   !isServer && target.removeEventListener(event, handler)
 }

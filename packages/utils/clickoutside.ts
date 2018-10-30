@@ -8,10 +8,10 @@
 
 import { isServer } from './index'
 
-const context = '@@clickoutsideContext'
+const context: string = '@@clickoutsideContext'
 
 export default {
-  bind (el, binding) {
+  bind (el, binding): void {
     const handler = event => {
       if (!el.contains(event.target)) {
         el[context].callback()
@@ -27,17 +27,17 @@ export default {
     !isServer && document.addEventListener(el[context].arg, handler)
   },
 
-  update (el, binding) {
+  update (el, binding): void {
     /* istanbul ignore next */
     el[context].callback = binding.value
   },
 
-  unbind (el) {
+  unbind (el): void {
     !isServer &&
       document.removeEventListener(el[context].arg, el[context].handler)
   },
 
-  install (Vue) {
+  install (Vue): void {
     Vue.directive('clickoutside', {
       bind: this.bind,
       unbind: this.unbind

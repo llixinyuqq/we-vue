@@ -162,4 +162,3 @@ export default Vue.extend({
     }
   }
 })
-// # sourceMappingURL=index.js.map
