@@ -9,7 +9,7 @@
   </button>
 </template>
 
-<script>
+<script lang="ts">
 import create from '../utils/create'
 
 export default create({

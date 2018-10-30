@@ -154,13 +154,13 @@
 //   install,
 //   version
 // }
-import Vue from 'vue'
-import Button from './button/index'
-export { Button }
-export default Vue.extend({
-  methods: {
-    hello: function () {
-      return 'haha'
-    }
-  }
-})
+// import Vue from 'vue'
+import Button from './button/index.vue'
+export default Button
+// export default Vue.extend({
+//   methods: {
+//     hello (): string {
+//       return 'haha'
+//     }
+//   }
+// })

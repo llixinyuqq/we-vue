@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "tsc-compiled",
     "module": "esnext",
     "target": "es5",
+    "strict": false, // todo
     "sourceMap": false,
     "moduleResolution": "node",
-    "outDir": "tsc-compiled",
-    "declaration": false
+    "declaration": false,
+    "experimentalDecorators": true
   },
   "include": [
-    "packages/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
+    "packages/**/*.ts",
+    "packages/**/*.vue"
   ]
 }
