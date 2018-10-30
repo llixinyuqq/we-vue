@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "esnext",
+    "target": "es5",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "outDir": "fuck",
+    "declaration": true
+  },
+  "include": [
+    "packages/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
