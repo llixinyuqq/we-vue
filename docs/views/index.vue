@@ -7,6 +7,14 @@
           <div class="slogan text-center mt-2 text-light sub-title">简单易用的 Vue.js 组件</div>
         </div>
         <div class="row mt-5 justify-content-center">
+          <v-btn
+            color="success"
+            block
+            dark
+          >
+            test
+          </v-btn>
+
           <router-link
             to="/doc/v2_0/index"
             class="btn btn-primary ml-2 mr-2
@@ -30,6 +38,8 @@
 
     <section class="mt-4 mt-4">
       <div class="container">
+        <v-card>test</v-card>
+
         <h2 class="text-center mt-5 mb-4 title-feature">特性</h2>
         <div class="row justify-content-between">
           <div class="card shadow">
