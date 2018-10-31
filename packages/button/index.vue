@@ -10,9 +10,10 @@
 </template>
 
 <script lang="ts">
-import create from '../utils/create'
+import Vue from 'vue'
+// import create from '../utils/create'
 
-export default create({
+export default Vue.extend({
   name: 'button',
 
   props: {
@@ -30,26 +31,26 @@ export default create({
     handleClick (event) {
       this.$emit('click', event)
     }
-  },
+  } // ,
 
-  computed: {
-    classObject () {
-      let ret = {}
+  // computed: {
+  //   classObject () {
+  //     let ret = {}
 
-      let classType = this.plain
-        ? `weui-btn_plain-${this.type}`
-        : `weui-btn_${this.type}`
-      let classDisabled = this.plain
-        ? 'weui-btn_plain-disabled'
-        : 'weui-btn_disabled'
+  //     let classType = this.plain
+  //       ? `weui-btn_plain-${this.type}`
+  //       : `weui-btn_${this.type}`
+  //     let classDisabled = this.plain
+  //       ? 'weui-btn_plain-disabled'
+  //       : 'weui-btn_disabled'
 
-      ret[classType] = true
-      ret[classDisabled] = this.disabled
-      ret['weui-btn_loading'] = this.isLoading
-      ret['weui-btn_mini'] = this.mini
+  //     ret[classType] = true
+  //     ret[classDisabled] = this.disabled
+  //     ret['weui-btn_loading'] = this.isLoading
+  //     ret['weui-btn_mini'] = this.mini
 
-      return ret
-    }
-  }
+  //     return ret
+  //   }
+  // }
 })
 </script>

@@ -5,10 +5,10 @@ const isServer = Vue.prototype.$isServer
 
 /**
  * whether the value is defined
- * @param value
+ * @param v
  */
-function isDef (value: any): boolean {
-  return value !== undefined && value !== null
+function isDef (v: any): boolean {
+  return v !== undefined && v !== null
 }
 
 /**

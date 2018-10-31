@@ -155,18 +155,10 @@
 //   version
 // }
 
-// import Vue from 'vue'
+import Vue from 'vue'
 
 import Button from './button/index.vue'
 
 export {
   Button
 }
-
-// export default Vue.extend({
-//   methods: {
-//     hello (): string {
-//       return 'haha'
-//     }
-//   }
-// })

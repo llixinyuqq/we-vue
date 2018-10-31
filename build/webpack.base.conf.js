@@ -11,7 +11,7 @@ function resolve(dir) {
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.ts', '.vue', '.json'],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       packages: path.resolve(__dirname, '../packages')
@@ -48,6 +48,14 @@ module.exports = {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.jsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        }
       },
       {
         test: /\.md$/,
