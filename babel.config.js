@@ -1,5 +1,5 @@
-module.exports = function (api) {
-  const {BABEL_MODULE, NODE_ENV} = process.env
+module.exports = function(api) {
+  const { BABEL_MODULE, NODE_ENV } = process.env
   const useESModules = BABEL_MODULE !== 'commonjs' && NODE_ENV !== 'test'
 
   api && api.cache(false)
@@ -26,6 +26,30 @@ module.exports = function (api) {
       ],
       '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-transform-object-assign'
-    ]
+    ],
+    env: {
+      es5: {
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              loose: true,
+              modules: true
+            }
+          ]
+        ]
+      },
+      lib: {
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              loose: true,
+              modules: false
+            }
+          ]
+        ]
+      }
+    }
   }
 }
