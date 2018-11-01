@@ -158,9 +158,7 @@
 // import Vue from 'vue'
 
 import Button from './button/index.vue'
-import Abc from './abc.vue'
 
 export {
-  Button,
-  Abc
+  Button
 }

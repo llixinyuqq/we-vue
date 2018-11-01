@@ -24,21 +24,21 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [
-          resolve('packages'),
-          resolve('test'),
-          resolve('demo'),
-          resolve('docs')
-        ],
-        options: {
-          formatter: require('eslint-friendly-formatter'),
-          emitWarning: true
-        }
-      },
+      // {
+      //   test: /\.(js|vue)$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   include: [
+      //     resolve('packages'),
+      //     resolve('test'),
+      //     resolve('demo'),
+      //     resolve('docs')
+      //   ],
+      //   options: {
+      //     formatter: require('eslint-friendly-formatter'),
+      //     emitWarning: true
+      //   }
+      // },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -50,7 +50,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
         options: {

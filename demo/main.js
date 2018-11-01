@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './app.vue'
-import WeVue from '../packages/index.js'
+// import WeVue from '../packages/index.js'
 import '../packages/style/index.scss'
 import './assets/style/demo.scss'
 import './assets/iconfont/iconfont.css'
@@ -11,7 +11,7 @@ import store from './store'
 Vue.config.productionTip = false
 Vue.config.devtools = true
 
-Vue.use(WeVue)
+// Vue.use(WeVue)
 
 router.afterEach((to, from) => {
   document.title = to.meta.title
@@ -46,11 +46,12 @@ new Vue({
     }
   },
 
-  methods: {
-    message (msg) {
-      this.$toast.text(msg)
-    }
-  },
+  // TODO
+  // methods: {
+  //   message (msg) {
+  //     this.$toast.text(msg)
+  //   }
+  // },
 
   watch: {
     $route (to, from) {

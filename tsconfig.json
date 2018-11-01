@@ -7,9 +7,9 @@
     "allowJs": false,
     "strict": false, // todo
     "importHelpers": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "moduleResolution": "node",
-    "declaration": false,
+    "declaration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
@@ -23,10 +23,13 @@
     "lib": ["es2017", "dom"]
   },
   "files": [
-    "packages/vue-shims.d.ts"
+    "vue-shims.d.ts"
   ],
   "include": [
-    "packages/**/*.vue"
+    "packages/**/*.ts",
+    "packages/**/*.vue",
+    "demo/**/*.ts",
+    "demo/**/*.vue"
   ],
   "exclude": [
     "node_modules"

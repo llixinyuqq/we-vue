@@ -27,6 +27,16 @@
   </div>
 </template>
 
+<script>
+import { Button } from '../../packages/index.ts'
+
+export default {
+  components: {
+    'wv-button': Button
+  }
+}
+</script>
+
 <style scoped lang="scss">
 .buttons-big {
   display: block;
