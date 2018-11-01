@@ -12,6 +12,9 @@
 <script lang="ts">
 import Vue from 'vue'
 
+// TODO
+import mixins from '../utils/mixins'
+
 export default Vue.extend({
   name: 'wv-button',
 
